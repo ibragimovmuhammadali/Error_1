@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart/' as http;
+import 'package:http/http.dart' as http;
 import 'package:ngdemo14/service/http_service.dart';
+
+import '../service/log_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
 
   apiLoadPostList2() async{
     var response = await HttpService.GET(HttpService.API_POST_LIST, HttpService.paramsEmpty());
-    print(response);
+    LogService.i(response!);
   }
 
   @override
